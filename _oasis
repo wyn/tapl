@@ -5,6 +5,7 @@ Synopsis:    Exercises and such from 'Types and Programming Languages' book
   by Pierce
 Authors:     Simon Parry
 License:     MIT
+Plugins:     DevFiles (0.4)
 Executable "tapl"
   Path:   src
   MainIs: UntypedArith.ml

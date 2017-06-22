@@ -61,10 +61,10 @@ let rec eval t =
   try let t' = eval1 t
       in eval t'
   with NoRuleApplies -> t
-
-
+;;
   
 let () =
   let i = Line 1 in
   let zero = TmZero i in 
-  eval (TmSucc (i, zero))
+  let e = eval (TmSucc (i, zero)) in
+  print_string "done" 
