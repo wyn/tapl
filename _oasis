@@ -1,0 +1,11 @@
+OASISFormat: 0.4
+Name:        tapl
+Version:     0.1
+Synopsis:    Exercises and such from 'Types and Programming Languages' book
+  by Pierce
+Authors:     Simon Parry
+License:     MIT
+Executable "tapl"
+  Path:   src
+  MainIs: UntypedArith.ml
+  BuildTools: ocamlbuild
