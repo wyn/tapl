@@ -30,7 +30,8 @@ let rec isval t = match t with
 exception NoRuleApplies
 ;;
   
-let dummyinfo = Dummy in
+let dummyinfo = Dummy
+;;
 
 let rec eval1 t = match t with
   TmIf (_, TmTrue (_), t2, t3) -> t2
@@ -55,16 +56,9 @@ let rec eval1 t = match t with
   TmIsZero (fi, t1')
 | _ -> raise NoRuleApplies
 
-in
 
 let rec eval t =
   try let t' = eval1 t
       in eval t'
   with NoRuleApplies -> t
-;;
-  
-let () =
-  let i = Line 1 in
-  let zero = TmZero i in 
-  let e = eval (TmSucc (i, zero)) in
-  print_string "done" 
+

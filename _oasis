@@ -6,7 +6,13 @@ Synopsis:    Exercises and such from 'Types and Programming Languages' book
 Authors:     Simon Parry
 License:     MIT
 Plugins:     DevFiles (0.4)
+BuildTools: ocamlbuild
+
+Library "tapllib"
+  Path: src
+  Modules: UntypedArith  
 Executable "tapl"
   Path:   src
-  MainIs: UntypedArith.ml
+  MainIs: Main.ml
+  CompiledObject: best
   BuildTools: ocamlbuild
