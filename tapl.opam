@@ -1,0 +1,11 @@
+opam-version: "1.2"
+version: "1.0"
+maintainer: "simon"
+authors: ["simon"]
+homepage: "https://github.com/wyn/tapl"
+bug-reports: "https://github.com/wyn/tapl/issues"
+dev-repo: "git@github.com:wyn/tapl.git"
+license: "MIT"
+build: [
+  ["jbuilder" "build" "--only" "tapl" "--root" "." "-j" jobs "@install"]
+]

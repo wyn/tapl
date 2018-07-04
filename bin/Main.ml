@@ -1,5 +1,4 @@
 open UntypedArith
-;;
 
 let test = 
   let z = (TmZero dummyinfo) in
