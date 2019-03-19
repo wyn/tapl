@@ -1,7 +1,7 @@
 (executables
- ((names (main))
-  (libraries (tapl))))
+ (names main)
+ (libraries tapl))
 
 (install
- ((section bin)
-  (files ((main.exe as tapl)))))
+ (section bin)
+ (files main.exe as tapl))
