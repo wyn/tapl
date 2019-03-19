@@ -20,7 +20,7 @@ let rec isnumerical t = match t with
 | _ -> false
 
   
-let rec isval t = match t with
+let isval t = match t with
   TmTrue _ -> true
 | TmFalse _ -> true
 | t when (isnumerical t) -> true
@@ -34,8 +34,8 @@ let dummyinfo = Dummy
 ;;
 
 let rec eval1 t = match t with
-  TmIf (_, TmTrue (_), t2, t3) -> t2
-| TmIf (_, TmFalse (_), t2, t3) -> t3
+  TmIf (_, TmTrue (_), t2, _t3) -> t2
+| TmIf (_, TmFalse (_), _t2, t3) -> t3
 | TmIf (fi, t1, t2, t3) ->
     let t1' = eval1 t1 in
     TmIf (fi, t1', t2, t3)
@@ -65,8 +65,8 @@ let rec eval t =
 
 (* TODO big step style *)
 let rec eval2 t = match t with
-  TmIf (_, TmTrue (_), t2, t3) -> eval2 t2
-| TmIf (_, TmFalse (_), t2, t3) -> eval2 t3
+  TmIf (_, TmTrue (_), t2, _t3) -> eval2 t2
+| TmIf (_, TmFalse (_), _t2, t3) -> eval2 t3
 | TmIf (fi, t1, t2, t3) ->
     let t1' = eval2 t1 in
     TmIf (fi, t1', t2, t3)
